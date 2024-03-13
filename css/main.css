@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap');
-
 :root {
     --color-body: #b6cbce;
     --color-heading: #eef3db;
@@ -44,6 +42,7 @@ img {
 .text-brand {
     color: var(--color-brand);
 }
+
 
 .bg-base {
     background-color: var(--color-base);
@@ -168,6 +167,15 @@ img {
 
 .card-custom .card-custom-image img {
     transition: all 0.4s ease;
+}
+
+
+#home {
+    background-image: url("https://i.hizliresim.com/a9hl9zy.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
 }
 
 /* CONTACT */
