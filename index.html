@@ -1,197 +1,661 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="./style/style.css" />
-  <link rel="stylesheet" href="./style/mediaqueries.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burak - Portfolio</title>
+    <meta name="description" content="A portfolio showcasing my Swift, Flutter, and Game Development projects.">
+
+    <!-- Google Fonts: Inter to simulate SF Pro -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
-  <nav id="desktop-nav">
-    <div class="logo">Burak Kardaş</div>
-    <div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="" onclick="window.open('./assets/CV.pdf')">Download CV</a></li>
-      </ul>
-    </div>
-  </nav>
-  <nav id="hamburger-nav">
-    <div class="logo">Burak Kardaş</div>
-    <div class="hamburger-menu">
-      <div class="hamburger-icon" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="menu-links">
-        <li><a href="#about" onclick="toggleMenu()">About</a></li>
-        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        <li><a href="" onclick="window.open('./assets/CV.pdf')">Download CV</a></li>
-      </div>
-    </div>
-  </nav>
-  <section id="profile">
-    <div class="section__pic-container">
-      <img src="./assets/profile-pic.png" alt="John Doe profile picture" />
-    </div>
-    <div class="section__text">
-      <p class="section__text__p1">Hello, I'm</p>
-      <h1 class="title">Burak Kardaş</h1>
-      <p class="section__text__p2">Mobile & Game Developer</p>
-      <div class="btn-container">
-        <button class="btn btn-color-1" onclick="toggleMenu(
-          location.href='./swift_apps.html')">
-          Swift Apps
-        </button>
-        <button class="btn btn-color-1" onclick="toggleMenu(
-          location.href='./flutter_apps.html')">
-          Flutter Apps
-        </button>
-        <button class="btn btn-color-1" onclick="toggleMenu(
-          location.href='./games.html')">
-          Games
-        </button>
-      </div>
-      <div id="socials-container">
-        <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon"
-          onclick="location.href='https://www.linkedin.com/in/burak-k-770b4b161/'" />
-        <img src="./assets/github.png" alt="My Github profile" class="icon"
-          onclick="location.href='https://github.com/burakkardas'" />
-      </div>
-    </div>
-  </section>
-  <section id="about">
-    <p class="section__text__p1">Get To Know More</p>
-    <h1 class="title">About Me</h1>
-    <div class="section-container">
+<body class="bg-background text-primary antialiased">
 
-      <div class="about-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <img src="./assets/education.png" alt="Education icon" class="icon" />
-            <h3>Education</h3>
-            <p>Karadeniz Technical University - Computer Programming</p>
-            <p>Mersin University - Information Systems and Technologies</p>
-          </div>
-        </div>
-        <div class="text-container">
-          <p>
-            My name is Burak. I’m working on mobile game development for 3 year. I have a YouTube channel on game
-            development software and I upload videos regularly. I gave online and face to face lectures on unity
-            education at Dokuz Eylül University, Karadeniz Technical University and Mersin University. I’ve gained
-            experience at Lagot Games as a game developer for ten months. You can have a look at the games that I
-            developed for Lagot Games in my profile. I’m also developing games that I own myself. I’m a
-            self-disciplined, perfectionist person. I’m open to critisism and I go through well with team work. Apart
-            from game development, I have experience in graphic design and I worked at Avrasya University as graphic
-            designer. I also worked at many private institutions earlier in the past. You are always welcome to see my
-            YouTube Channel and my profile. l am working No Surrender right now. I started working in casual and online
-            game.
-          </p>
-        </div>
-      </div>
-    </div>
-    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
-  </section>
-  <section id="experience">
-    <p class="section__text__p1">Explore My</p>
-    <h1 class="title">Experience</h1>
-    <div class="experience-details-container">
-      <div class="about-containers">
-        <div class="details-container">
-          <h2 class="experience-sub-title">Avrasya University</h2>
-          <p>Graphic Designer</p>
-          <br />
-          <div class="article-container">
-            <div class="about-details-container">
-              <div class="text-container">
-                <p style="text-align: center;">
-                  I worked as a graphic designer at Avrasya University, where I
-                  had the opportunity to apply my creativity and design skills. I was
-                  responsible for creating visually appealing materials for various university
-                  projects and events. This role allowed me to hone my graphic design
-                  abilities while collaborating with a diverse team to meet the university's
-                  communication needs.
-                </p>
-              </div>
+    <!-- Subtle Saks Blue Border Glow -->
+    <div class="site-border-glow"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50">
+        <div class="nav-inner max-w-6xl mx-auto px-6 flex justify-between items-center relative">
+            <!-- Brand -->
+            <a href="#" class="text-xl font-semibold tracking-tight hover-fade z-20 relative">Burak</a>
+
+            <!-- Desktop Centered Menu -->
+            <ul
+                class="desktop-menu hidden md:flex absolute left-1/2 -translate-x-1/2 gap-8 text-sm font-medium text-secondary">
+                <li><a href="#about" class="hover-fade">About</a></li>
+                <li><a href="#experience" class="hover-fade">Experience</a></li>
+                <li><a href="#projects" class="hover-fade">Projects</a></li>
+                <li><a href="#contact" class="hover-fade">Contact</a></li>
+            </ul>
+
+            <div class="flex items-center gap-4 z-20 relative">
+                <!-- Theme Switcher -->
+                <button id="theme-toggle" class="theme-switch" aria-label="Toggle Theme" role="switch">
+                    <div class="theme-switch-track"></div>
+                    <div class="theme-switch-handle">
+                        <!-- Moon Icon (Shown in Light Mode) -->
+                        <svg id="icon-moon" class="handle-icon text-primary" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                            </path>
+                        </svg>
+                        <!-- Sun Icon (Shown in Dark Mode) -->
+                        <svg id="icon-sun" class="handle-icon hidden text-primary" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                            </path>
+                        </svg>
+                    </div>
+                </button>
+
+                <!-- Mobile Hamburger Button -->
+                <button id="mobile-menu-btn" class="hamburger-btn md:hidden focus:outline-none" aria-label="Menu">
+                    <i class="fa-solid fa-bars text-primary text-2xl transition-transform duration-300"></i>
+                </button>
             </div>
-          </div>
         </div>
-        <div class="details-container">
-          <h2 class="experience-sub-title">Lagot Games</h2>
-          <p>Game Developer</p>
-          <br />
-          <div class="article-container">
-            <div class="about-details-container">
-              <div class="text-container">
-                <p style="text-align: center;">
-                  At Lagot Games, I had the opportunity to work on various Hyper
-                  Casual games where I contributed to the development process from inception
-                  to release. My responsibilities included implementing software
-                  architectures, optimizing game performance, and applying design patterns to
-                  ensure efficient and maintainable code. This experience allowed me to deepen
-                  my understanding of game development principles and refine my skills in
-                  software engineering, optimization techniques, and design patterns.
-                </p>
-              </div>
-            </div>
-          </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="mobile-menu-overlay md:hidden">
+            <ul class="mobile-menu-inner">
+                <li><a href="#about" class="mobile-link">About</a></li>
+                <li><a href="#experience" class="mobile-link">Experience</a></li>
+                <li><a href="#projects" class="mobile-link">Projects</a></li>
+                <li><a href="#contact" class="mobile-link">Contact</a></li>
+            </ul>
         </div>
-        <div class="details-container">
-          <h2 class="experience-sub-title">No Surrender Studio</h2>
-          <p>Game Developer</p>
-          <br />
-          <div class="article-container">
-            <div class="about-details-container">
-              <div class="text-container">
-                <p style="text-align: center;">
-                  At No Surrender Studio, we focus on developing casual games and
-                  I have been involved in developing various game levels. Throughout this
-                  experience, I have contributed to different stages of the game development
-                  process and put effort into enhancing various sections of the games. This
-                  experience has helped me to expand my knowledge and skills in the field of
-                  casual game development.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" />
-  </section>
-  <section id="contact">
-    <p class="section__text__p1">Get in Touch</p>
-    <h1 class="title">Contact Me</h1>
-    <div class="contact-info-upper-container">
-      <div class="contact-info-container">
-        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
-        <p><a href="mailto:krdsbrk@gmail.com">krdsbrk@gmail.com</a></p>
-      </div>
-      <div class="contact-info-container">
-        <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-        <p><a href="https://www.linkedin.com/in/burak-k-770b4b161/">LinkedIn</a></p>
-      </div>
-    </div>
-  </section>
-  <footer>
-    <nav>
-      <div class="nav-links-container">
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-        </ul>
-      </div>
     </nav>
-  </footer>
-  <script src="./scripts/script.js"></script>
+
+    <!-- Canvas-powered Typewriter Code Background -->
+    <canvas id="code-canvas"></canvas>
+
+    <!-- Ambient Glow Background -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <!-- Main Content Container -->
+    <main class="pt-32 pb-24 px-6 max-w-6xl mx-auto w-full space-y-24 md:space-y-40">
+
+        <!-- Hero / About Me Section -->
+        <section id="about"
+            class="fade-in-section min-h-[70vh] flex flex-col justify-center items-center text-center mt-12 md:mt-24 space-y-8 md:space-y-10">
+            <div class="inline-block glass-pill fade-in-up delay-1">
+                <span class="text-sm font-medium tracking-wide">Senior Game & Mobile Developer</span>
+            </div>
+            <h1
+                class="text-4xl md:text-6xl font-bold tracking-tighter fade-in-up delay-2 leading-tight typewriter-container">
+                <span class="block mb-2 md:mb-4">Hi, I'm Burak.</span>
+                <span class="block">I am a <span class="text-gradient typewrite" data-period="2000"
+                        data-type='["Senior Game Dev.", "Mobile Developer.", "Swift Expert.", "Flutter Enthusiast."]'><span
+                            class="wrap"></span></span></span>
+            </h1>
+            <p class="text-lg md:text-xl text-secondary max-w-2xl mx-auto fade-in-up delay-3 px-4 md:px-0">
+                I specialize in building engaging games, high-performance iOS apps with Swift, and cross-platform
+                solutions
+                with Flutter. Let's create something extraordinary.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in-up delay-4 pt-4">
+                <a href="#projects" class="btn-primary w-full sm:w-auto">View Projects</a>
+                <a href="#contact" class="btn-secondary w-full sm:w-auto">Contact Me</a>
+            </div>
+        </section>
+
+        <!-- Experience & Education Section -->
+        <section id="experience" class="fade-in-section scroll-mt-24 space-y-12">
+            <div class="text-center mb-8 md:mb-20">
+                <h2 class="text-3xl md:text-4xl font-semibold mb-4 text-gradient inline-block">My Journey</h2>
+                <p class="text-secondary text-lg">Experience & Education</p>
+            </div>
+
+            <div class="journey-wrapper">
+                <!-- Decorative Timeline Line (Desktop only) -->
+                <div class="timeline-beam"></div>
+
+                <!-- Experience Block -->
+                <div class="journey-col exp-col fade-in-section">
+                    <h3 class="journey-title"><i class="fa-solid fa-briefcase text-accent"></i> Experience</h3>
+
+                    <!-- No Surrender Studio -->
+                    <div class="glass-card journey-card">
+                        <div class="timeline-node">
+                            <div class="timeline-node-inner animate-ping"></div>
+                        </div>
+                        <div class="journey-card-header">
+                            <div class="icon-box shadow-inner text-accent bg-accent-light">
+                                <i class="fa-solid fa-gamepad"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-primary">Game Developer</h4>
+                                <div class="journey-company text-accent">No Surrender Studio</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-secondary leading-relaxed">
+                            At No Surrender Studio, we focus on developing casual games and I have been involved in
+                            developing various game levels. Throughout this experience, I have contributed to different
+                            stages of the game development process and put effort into enhancing various sections of the
+                            games. This experience has helped me to expand my knowledge and skills in the field of
+                            casual game development.
+                        </p>
+                    </div>
+
+                    <!-- Lagot Games -->
+                    <div class="glass-card journey-card">
+                        <div class="timeline-node">
+                            <div class="timeline-node-inner"></div>
+                        </div>
+                        <div class="journey-card-header">
+                            <div class="icon-box shadow-inner text-purple bg-purple-light">
+                                <i class="fa-solid fa-rocket"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-primary">Game Developer</h4>
+                                <div class="journey-company text-purple">Lagot Games</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-secondary leading-relaxed">
+                            At Lagot Games, I had the opportunity to work on various Hyper Casual games where I
+                            contributed to the development process from inception to release. My responsibilities
+                            included implementing software architectures, optimizing game performance, and applying
+                            design patterns to ensure efficient and maintainable code. This experience allowed me to
+                            deepen my understanding of game development principles and refine my skills in software
+                            engineering, optimization techniques, and design patterns.
+                        </p>
+                    </div>
+
+                    <!-- Avrasya University -->
+                    <div class="glass-card journey-card">
+                        <div class="timeline-node">
+                            <div class="timeline-node-inner"></div>
+                        </div>
+                        <div class="journey-card-header">
+                            <div class="icon-box shadow-inner text-orange bg-orange-light">
+                                <i class="fa-solid fa-palette"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-primary">Graphic Designer</h4>
+                                <div class="journey-company text-orange">Avrasya University</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-secondary leading-relaxed">
+                            I worked as a graphic designer at Avrasya University, where I had the opportunity to apply
+                            my creativity and design skills. I was responsible for creating visually appealing materials
+                            for various university projects and events. This role allowed me to hone my graphic design
+                            abilities while collaborating with a diverse team to meet the university's communication
+                            needs.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Education Block -->
+                <div class="journey-col edu-col fade-in-section">
+                    <h3 class="journey-title"><i class="fa-solid fa-graduation-cap text-accent"></i> Education</h3>
+
+                    <div class="glass-card journey-card group">
+                        <div class="timeline-node edu-node">
+                            <div class="timeline-node-inner edu-node-inner"></div>
+                        </div>
+                        <h4 class="text-lg font-bold text-primary mb-1">Information Systems and Technologies</h4>
+                        <div class="journey-company text-accent mb-2">Mersin University</div>
+                    </div>
+
+                    <div class="glass-card journey-card group">
+                        <div class="timeline-node edu-node">
+                            <div class="timeline-node-inner edu-node-inner"></div>
+                        </div>
+                        <h4 class="text-lg font-bold text-primary mb-1">Computer Programming</h4>
+                        <div class="journey-company text-accent mb-2">Karadeniz Technical University</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="fade-in-section scroll-mt-24">
+            <div class="section-header text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold mb-4 text-gradient inline-block">Featured Projects</h2>
+                <p class="text-secondary text-lg">A selection of my work across Game Development, Swift & Flutter</p>
+            </div>
+
+            <!-- Games Category -->
+            <div class="mb-16">
+                <h3 class="category-header text-accent">
+                    <i class="fa-solid fa-gamepad"></i> Games
+                </h3>
+
+                <div class="project-carousel">
+                    <!-- No Surrender Heroes -->
+                    <a href="https://store.steampowered.com/app/2709160/No_Surrender_Heroes/" target="_blank"
+                        rel="noopener" class="showcase-card game-card">
+                        <div class="showcase-media">
+                            <img src="images/no-surrender-heroes.png" alt="No Surrender Heroes" loading="lazy">
+                            <span class="pfc-tag game block-tag">Game</span>
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">No Surrender Heroes</h4>
+                            <p class="showcase-desc">A strategic and action-packed title available on Steam.</p>
+                            <span class="showcase-link">View on Steam <i
+                                    class="fa-solid fa-arrow-right text-xs"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- The War -->
+                    <a href="https://play.google.com/store/apps/details?id=com.nosurrenderstudio.nosurrenderdemothewar"
+                        target="_blank" rel="noopener" class="showcase-card game-card">
+                        <div class="showcase-media">
+                            <img src="images/thewar.png" alt="The War" loading="lazy">
+                            <span class="pfc-tag game block-tag">Game</span>
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">The War</h4>
+                            <p class="showcase-desc">Engaging tactical gameplay available on the Google Play Store.</p>
+                            <span class="showcase-link">Get on Google Play <i
+                                    class="fa-solid fa-arrow-right text-xs"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Rope Them Up -->
+                    <a href="#" class="showcase-card game-card">
+                        <div class="showcase-media">
+                            <img src="images/rope-them-up.png" alt="Rope Them Up" loading="lazy">
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">Rope Them Up</h4>
+                        </div>
+                    </a>
+
+                    <a href="#" class="showcase-card game-card">
+                        <div class="showcase-media">
+                            <img src="images/level-up-body.png" alt="Microwave Limit" loading="lazy">
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">Level Up Body</h4>
+                        </div>
+                    </a>
+
+                    <a href="#" class="showcase-card game-card">
+                        <div class="showcase-media">
+                            <img src="images/dodge-fighter.png" alt="Dodge Fighter" loading="lazy">
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">Dodge Fighter</h4>
+                        </div>
+                    </a>
+
+                    <!-- Number Commander -->
+                    <a href="https://apps.apple.com/tr/app/number-commander/id6448071755?l=tr
+Number Commander" class="showcase-card game-card">
+                        <div class="showcase-media">
+                            <img src="images/NumberCommander.png" alt="Number Commander" loading="lazy">
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">Number Commander</h4>
+                            <span class="showcase-link">View details <i
+                                    class="fa-solid fa-arrow-right text-xs"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Destruct io -->
+                    <a href="https://apps.apple.com/tr/app/destruct-io/id1620856276?l=tr
+Destruct IO" class="showcase-card game-card">
+                        <div class="showcase-media">
+                            <img src="images/destructio.png" alt="Descruct io" loading="lazy">
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">Descruct io</h4>
+                            <span class="showcase-link">View details <i
+                                    class="fa-solid fa-arrow-right text-xs"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Rope Pull Hero -->
+                    <a href="https://apps.apple.com/tr/app/rope-pull-hero/id1633149788?l=tr
+Rope Pull Hero" class="showcase-card game-card">
+                        <div class="showcase-media">
+                            <img src="images/rope-pull-hero.png" alt="Rope Pull Hero" loading="lazy">
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">Rope Pull Hero</h4>
+                            <span class="showcase-link">View details <i
+                                    class="fa-solid fa-arrow-right text-xs"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Microwave Limit -->
+                    <a href="#" class="showcase-card game-card">
+                        <div class="showcase-media">
+                            <img src="images/microwave-limit.png" alt="Microwave Limit" loading="lazy">
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">Microwave Limit</h4>
+                        </div>
+                    </a>
+
+                    <a href="#" class="showcase-card game-card">
+                        <div class="showcase-media">
+                            <img src="images/heli-stack.png" alt="Heli Stack" loading="lazy">
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">Heli Stack</h4>
+                        </div>
+                    </a>
+
+                    <a href="#" class="showcase-card game-card">
+                        <div class="showcase-media">
+                            <img src="images/sniper-sheriff.png" alt="Heli Stack" loading="lazy">
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">Sniper Sheriff</h4>
+                        </div>
+                    </a>
+
+                    <!-- Shooter Hero -->
+                    <a href="#" class="showcase-card game-card">
+                        <div class="showcase-media">
+                            <img src="images/shooter-hero.png" alt="Shooter Hero" loading="lazy">
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">Shooter Hero</h4>
+                        </div>
+                    </a>
+
+                    <a href="#" class="showcase-card game-card">
+                        <div class="showcase-media">
+                            <img src="images/bender-hero.png" alt="Heli Stack" loading="lazy">
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">Bender Hero</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Swift / iOS Category -->
+            <div class="mb-16">
+                <h3 class="category-header text-orange-500">
+                    <i class="fa-brands fa-swift"></i> Swift / iOS
+                </h3>
+
+                <div class="project-carousel">
+
+                    <a href="https://apps.apple.com/tr/app/dobby-storynest/id6741083381?l=tr
+Dobby: Storynest" class="showcase-card app-card swift-card">
+                        <div class="showcase-media">
+                            <img src="images/AuthSwift.png" alt="Swift Auth App" loading="lazy">
+                            <span class="pfc-tag swift block-tag">Swift</span>
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">Storynest</h4>
+                            <p class="showcase-desc">Authentication flow and UI design logic.</p>
+                            <span class="showcase-link">View App <i class="fa-solid fa-arrow-right text-xs"></i></span>
+                        </div>
+                    </a>
+
+
+                    <!-- Swift Auth App -->
+                    <a href="#" class="showcase-card app-card swift-card">
+                        <div class="showcase-media">
+                            <img src="images/AuthSwift.png" alt="Swift Auth App" loading="lazy">
+                            <span class="pfc-tag swift block-tag">Swift</span>
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">Auth App</h4>
+                            <p class="showcase-desc">Authentication flow and UI design logic.</p>
+                            <span class="showcase-link">View App <i class="fa-solid fa-arrow-right text-xs"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Swift Food App -->
+                    <a href="https://github.com/burakkardas/SwiftFoodApp" class="showcase-card app-card swift-card">
+                        <div class="showcase-media">
+                            <img src="images/FoodAppSwift.png" alt="Food App" loading="lazy">
+                            <span class="pfc-tag swift block-tag">Swift</span>
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">Food Delivery App</h4>
+                            <p class="showcase-desc">Modern iOS app for ordering food with elegant animations.</p>
+                            <span class="showcase-link">View App <i class="fa-solid fa-arrow-right text-xs"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- BMI Calculator -->
+                    <a href="https://github.com/burakkardas/BMICalculator-Swift"
+                        class="showcase-card app-card swift-card">
+                        <div class="showcase-media">
+                            <img src="images/bmiCalculatorSwfit.png" alt="BMI Calculator" loading="lazy">
+                            <span class="pfc-tag swift block-tag">Swift</span>
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">BMI Calculator</h4>
+                            <span class="showcase-link">View App <i class="fa-solid fa-arrow-right text-xs"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Chair App -->
+                    <a href="https://github.com/burakkardas/ChairSwiftApp" class="showcase-card app-card swift-card">
+                        <div class="showcase-media">
+                            <img src="images/ChairAppSwift.png" alt="Swift Chair App" loading="lazy">
+                            <span class="pfc-tag swift block-tag">Swift</span>
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">AR Furniture / Chair</h4>
+                            <span class="showcase-link">View App <i class="fa-solid fa-arrow-right text-xs"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Intro Page View -->
+                    <a href="https://github.com/burakkardas/SwiftIntroView" class="showcase-card app-card swift-card">
+                        <div class="showcase-media">
+                            <img src="images/swift_intro_page.png" alt="Intro Page View" loading="lazy">
+                            <span class="pfc-tag swift block-tag">Swift</span>
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">Intro Onboarding</h4>
+                            <span class="showcase-link">View App <i class="fa-solid fa-arrow-right text-xs"></i></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Flutter Category -->
+            <div class="mb-12">
+                <h3 class="category-header text-blue-400">
+                    <i class="fa-mobile-screen fa-solid drop-shadow-[0_0_8px_rgba(96,165,250,0.5)]"></i> Flutter
+                </h3>
+
+                <div class="project-carousel">
+                    <!-- Gemini Clone -->
+                    <a href="https://github.com/burakkardas/Gemini-Clone" class="showcase-card app-card flutter-card">
+                        <div class="showcase-media">
+                            <img src="images/gemini_clone.png" alt="Gemini Clone" loading="lazy">
+                            <span class="pfc-tag flutter block-tag">Flutter</span>
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">Gemini UI Clone</h4>
+                            <p class="showcase-desc">Cross-platform replica of Google's Gemini application UI.</p>
+                            <span class="showcase-link">View App <i class="fa-solid fa-arrow-right text-xs"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Pharmacy App -->
+                    <a href="https://github.com/burakkardas/PharmacyApp" class="showcase-card app-card flutter-card">
+                        <div class="showcase-media">
+                            <img src="images/Pharmacy.png" alt="Pharmacy App" loading="lazy">
+                            <span class="pfc-tag flutter block-tag">Flutter</span>
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">Pharmacy App</h4>
+                            <p class="showcase-desc">Feature-rich digital pharmacy and prescription manager.</p>
+                            <span class="showcase-link">View App <i class="fa-solid fa-arrow-right text-xs"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Starbucks Login -->
+                    <a href="https://github.com/burakkardas/StarbucksLogin" class="showcase-card app-card flutter-card">
+                        <div class="showcase-media">
+                            <img src="images/starbucks.png" alt="Starbucks Login" loading="lazy">
+                            <span class="pfc-tag flutter block-tag">Flutter</span>
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">Starbucks Mobile Flow</h4>
+                            <span class="showcase-link">View App <i class="fa-solid fa-arrow-right text-xs"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Hamburger detail -->
+                    <a href="https://github.com/burakkardas/Product_Detail_Page"
+                        class="showcase-card app-card flutter-card">
+                        <div class="showcase-media">
+                            <img src="images/Hambuger.png" alt="Hamburger Detail Page" loading="lazy">
+                            <span class="pfc-tag flutter block-tag">Flutter</span>
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">Food Details UI</h4>
+                            <span class="showcase-link">View App <i class="fa-solid fa-arrow-right text-xs"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Firebase Auth -->
+                    <a href="https://github.com/burakkardas/FlutterFirebaseAuthentication"
+                        class="showcase-card app-card flutter-card">
+                        <div class="showcase-media">
+                            <img src="images/Authentication.png" alt="Firebase Authentication" loading="lazy">
+                            <span class="pfc-tag flutter block-tag">Flutter</span>
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">Firebase Auth System</h4>
+                            <span class="showcase-link">View App <i class="fa-solid fa-arrow-right text-xs"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Watch app -->
+                    <a href="https://github.com/burakkardas/WatchApp" class="showcase-card app-card flutter-card">
+                        <div class="showcase-media">
+                            <img src="images/watch_app.png" alt="Watch App" loading="lazy">
+                            <span class="pfc-tag flutter block-tag">Flutter</span>
+                        </div>
+                        <div class="showcase-content">
+                            <h4 class="showcase-title">Smart Watch UI</h4>
+                            <span class="showcase-link">View App <i class="fa-solid fa-arrow-right text-xs"></i></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="fade-in-section scroll-mt-24">
+            <div class="contact-wrapper max-w-4xl mx-auto">
+
+                <!-- Left: Info Column -->
+                <div class="contact-info">
+                    <div class="contact-badge">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <span>Get in Touch</span>
+                    </div>
+
+                    <h2 class="contact-title">Let's Build Something <span class="text-gradient">Amazing</span></h2>
+                    <p class="contact-desc">I'm currently available for freelance projects and open to exciting
+                        full-time opportunities. Let's turn your idea into a beautiful product.</p>
+
+                    <div class="contact-links">
+                        <a href="mailto:krdsbrk@gmail.com" class="contact-link">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            krdsbrk@gmail.com
+                        </a>
+                        <a href="https://github.com/burakkardas" target="_blank" class="contact-link">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                            GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/burak-k-770b4b161/" target="_blank" class="contact-link">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="contact-form-card">
+                    <form id="contact-form" action="https://formspree.io/f/xyzkqabp" method="POST"
+                        class="contact-form-inner">
+                        <!-- Please create a free Formspree account and replace the action URL above 
+                             with your unique form endpoint to start receiving emails. 
+                             Alternatively you can change the action to mailto:krdsbrk@gmail.com
+                             but mailto only opens the user's local email client. -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" class="input-field" placeholder="Your name"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" class="input-field"
+                                    placeholder="your@email.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="input-field"
+                                placeholder="What's this about?">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" class="input-field resize-none"
+                                placeholder="Tell me about your project..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-send group">
+                            <span class="btn-send-bg"></span>
+                            <span class="btn-send-content z-10 relative flex items-center justify-center gap-2">
+                                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                                </svg>
+                                Send Message
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-border mt-20 py-8 text-center text-sm text-tertiary">
+        <p>&copy; <span id="year"></span> Burak. All rights reserved.</p>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
 
 </html>
